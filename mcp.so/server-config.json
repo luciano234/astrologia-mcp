@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "astrologia": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/luciano234/astrologia-mcp.git",
+        "astrologia-mcp"
+      ]
+    }
+  }
+}

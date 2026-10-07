@@ -1,0 +1,113 @@
+{
+  "manifest_version": "0.4",
+  "name": "astrologia-mcp",
+  "display_name": "Astrologia CosmyDay",
+  "version": "1.1.0",
+  "description": "Natal charts, transits, sky events and horoscopes with CosmyDay data. / Cartas natales, tránsitos, eventos celestes y horóscopos con datos de CosmyDay.",
+  "long_description": "MCP server (Spanish and English) that queries the public CosmyDay API (https://cosmyday.com): natal chart with Placidus houses and aspects, location search, today's transits, moon phase, upcoming events (lunations, eclipses, retrogrades, ingresses) and daily, weekly and monthly horoscopes. No API key required. Every response includes the attribution 'Source / Fuente: CosmyDay (https://cosmyday.com)'.\n\nServidor MCP (español e inglés) que consulta la API pública de CosmyDay (https://cosmyday.com): carta natal con casas Placidus y aspectos, búsqueda de coordenadas, tránsitos del día, fase lunar, próximos eventos (lunaciones, eclipses, retrogradaciones, ingresos) y horóscopos diario, semanal y mensual. No requiere clave de API. Todas las respuestas incluyen la atribución 'Source / Fuente: CosmyDay (https://cosmyday.com)'.",
+  "author": {
+    "name": "luciano234",
+    "url": "https://github.com/luciano234"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luciano234/astrologia-mcp.git"
+  },
+  "homepage": "https://github.com/luciano234/astrologia-mcp",
+  "support": "https://github.com/luciano234/astrologia-mcp/issues",
+  "server": {
+    "type": "uv",
+    "entry_point": "server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${__dirname}",
+        "server.py"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "natal",
+      "description": "Planetary positions, house cusps and aspects for a birth moment. Time is local to the given coordinates; the time zone is resolved automatically. / Posiciones planetarias, cúspides de casas y aspectos para un momento de nacimiento. La hora es local a las coordenadas dadas; la zona horaria se resuelve automáticamente."
+    },
+    {
+      "name": "search_location",
+      "description": "Converts a place name into the coordinates needed by natal (via OpenStreetMap Nominatim). / Convierte un nombre de lugar en las coordenadas que necesita natal (vía OpenStreetMap Nominatim)."
+    },
+    {
+      "name": "events_upcoming",
+      "description": "Astrological events (retrogrades, lunations, eclipses, sign ingresses) in the next N days. / Eventos astrológicos (retrogradaciones, lunaciones, eclipses, cambios de signo) en los próximos N días."
+    },
+    {
+      "name": "event_kinds",
+      "description": "Lists all available event kinds with their counts. / Lista todos los tipos de evento disponibles junto con su conteo."
+    },
+    {
+      "name": "daily_horoscope",
+      "description": "Daily horoscope. Without 'sign' returns all twelve signs; with 'sign' returns only that sign (English, lowercase, e.g. 'leo'). / Horóscopo diario. Sin 'sign' devuelve los doce signos; con 'sign' devuelve solo ese signo (en inglés y minúsculas, ej. 'leo')."
+    },
+    {
+      "name": "weekly_horoscope",
+      "description": "Weekly horoscope. Without 'sign' returns all twelve signs; with 'sign' returns only that sign. / Horóscopo semanal. Sin 'sign' devuelve los doce signos; con 'sign' devuelve solo ese signo."
+    },
+    {
+      "name": "monthly_horoscope",
+      "description": "Monthly horoscope. Without 'sign' returns all twelve signs; with 'sign' returns only that sign. / Horóscopo mensual. Sin 'sign' devuelve los doce signos; con 'sign' devuelve solo ese signo."
+    },
+    {
+      "name": "monthly_archive_list",
+      "description": "Lists all available archived sign-months. / Lista todos los meses-signo archivados disponibles."
+    },
+    {
+      "name": "monthly_archive",
+      "description": "Archived monthly horoscope for a specific sign and month (yyyy-mm format, e.g. '2026-03'). / Horóscopo mensual archivado para un signo y mes específicos (formato yyyy-mm, ej. '2026-03')."
+    },
+    {
+      "name": "moon_phase",
+      "description": "Article about the current moon phase. / Artículo sobre la fase lunar actual."
+    },
+    {
+      "name": "transit_today",
+      "description": "Article about today's astrological transits. / Artículo sobre los tránsitos astrológicos de hoy."
+    },
+    {
+      "name": "week_ahead",
+      "description": "Astrological forecast for the next seven days. / Pronóstico astrológico de los próximos siete días."
+    },
+    {
+      "name": "monthly_overview",
+      "description": "Article with the astrological overview of the month. / Artículo con la visión general astrológica del mes."
+    },
+    {
+      "name": "health_check",
+      "description": "API service status. / Estado del servicio de la API."
+    }
+  ],
+  "tools_generated": false,
+  "keywords": [
+    "astrology",
+    "astrologia",
+    "horoscope",
+    "horoscopo",
+    "natal-chart",
+    "carta-natal",
+    "transits",
+    "cosmyday",
+    "spanish",
+    "english"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  }
+}
